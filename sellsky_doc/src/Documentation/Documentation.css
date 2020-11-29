@@ -1,0 +1,41 @@
+.documentation{
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 85%;
+    height: 90%;
+}
+
+.documentation {
+    text-align: left;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.documentation > .endpoint{
+    position: relative;
+    top: 50px;
+    width: 80%;
+    left: 10%;
+    border-top: 3px solid black;
+
+    line-height: 50px;
+    margin-bottom: 50px;
+    padding-top: 15px;
+}
+
+.documentation .name{
+    line-height: 50px;
+    font-size: 40px;
+    color: rgb(113, 154, 89);
+}
+
+.documentation .description{
+    margin-left: 10px;
+    color: gray;
+    font-weight: lighter;
+}
+.documentation .method_and_path {
+    line-height: 40px;
+    font-size: 25px;
+}
+
