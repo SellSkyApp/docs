@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 36,
   },
   title: {
+    fontFamily: 'Dancing Script',
     fontSize: 24,
     fontWeight: 'bold',
     color: theme.palette.common.white,
