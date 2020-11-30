@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Endpoint.css';
-import Body from './Body'
+import Body from './Body';
+
 export default class Endpoint extends Component {
 
     constructor(props){

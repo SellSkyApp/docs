@@ -1,14 +1,19 @@
-import './App.css';
-import Header from './Header/Header';
-import Sidebar from './Sidebar/Sidebar';
-import Documentation from './Documentation/Documentation'
+import React from 'react';
+
+import { ThemeProvider } from '@material-ui/core/styles';
+
+import Paperbase     from './components/Layer'
+import Documentation from './components/Documentation'
+
+import { theme }  from './constants/theme';
+
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Documentation/>
-      <Sidebar/>
-    </div>
+    <ThemeProvider theme={theme}>
+        <Paperbase>
+          <Documentation/>
+        </Paperbase>
+    </ThemeProvider>
   );
 }
 
