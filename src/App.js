@@ -10,20 +10,17 @@ import { theme } from './constants/theme';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Paperbase>
-        <Router>
-          <Switch>
-        <Route
-              exact path='/events'
-              render={(props) => (
-                <Documentation {...props} source={'events.json'} />
-              )}
-            />
+      <Router>
+        <Switch>
+          <Paperbase>
+            <Route exact path='/events'
+                   render={(props) => (
+                      <Documentation {...props} source={'events.json'} />
+                    )} />
             <Route path="/" component={Error} />
-          </Switch>
-
-        </Router>
-      </Paperbase>
+          </Paperbase>     
+        </Switch>
+      </Router>
     </ThemeProvider>
   );
 }

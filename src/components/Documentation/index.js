@@ -20,15 +20,15 @@ export default class Documentation extends Component {
     render(){
         return(
             <Grid>
-            <div className="title">{this.state.title}</div>
-            <div className="documentation">
-                {
-                    this.state.content.map( (line, index) => (
-                        <Endpoint data={line} />
-                    ))
-                }
-            </div> 
-        </Grid>
+                <div className="title">{this.state.title}</div>
+                <div className="documentation">
+                    {
+                        this.state.content.map( (line, index) => (
+                            <Endpoint data={line} />
+                        ))
+                    }
+                </div> 
+            </Grid>
         )
     }
 }
