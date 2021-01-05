@@ -1,23 +1,34 @@
-import React from 'react';
-
+import React, { Component } from 'react';
 import { Grid } from '@material-ui/core'
 
 import './style.css';
 import Endpoint from './Endpoint/Endpoint';
 
-import API from '../../API.json'
+export default class Documentation extends Component {
 
 
-const Documentation = () => (
-    <Grid>
-        <div className="documentation">
-            {
-                API[0].map( (line, index) => (
-                    <Endpoint data={line} />
-                ))
-            }
-        </div> 
-    </Grid>
-)
+    constructor(props){
+        let path = '../../constants/data_api/';
+        super(props)
+        let API = require('../../constants/data_api/' + props.source)
+        this.state ={
+           content: API[1],
+           title: API[0]
+        } 
+    }
 
-export default Documentation;
+    render(){
+        return(
+            <Grid>
+            <div className="title">{this.state.title}</div>
+            <div className="documentation">
+                {
+                    this.state.content.map( (line, index) => (
+                        <Endpoint data={line} />
+                    ))
+                }
+            </div> 
+        </Grid>
+        )
+    }
+}

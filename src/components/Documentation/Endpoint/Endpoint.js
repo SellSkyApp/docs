@@ -16,10 +16,10 @@ const Endpoint = (props) => (
             <span className="method">{props.data.method}</span>  {props.data.path}
         </div>
 
-        <div className="subtitle">Corps de la requête</div>
+        <div className="subtitle">Request body</div>
             <Body data={props.data.body}/>
 
-            <div className="subtitle">Réponse</div>
+            <div className="subtitle">Response</div>
             <div className="centered_green">
                 {props.data.response_success}
             </div>

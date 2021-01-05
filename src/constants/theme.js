@@ -9,7 +9,7 @@ let theme = createMuiTheme({
     }
   },
   typography: {
-    fontFamily: 'Playfair Displa',
+    //fontFamily: '',
     fontSize: 15,
     h5: {
       fontWeight: 500,

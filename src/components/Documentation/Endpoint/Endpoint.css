@@ -33,10 +33,10 @@
     background-color:  white;
 }
 
-.endpoint tr:hover{
-    /*do something to make it clearer */
+  /*.endpoint tr:hover{
+  do something to make it clearer 
 }
-
+*/
 .endpoint tr:last-child{
     border-bottom: none;
 }

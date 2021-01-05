@@ -1,0 +1,79 @@
+[
+    "Events",
+    [
+        {
+            "name": "Add an event",
+            "path": "/api/event",
+            "method": "POST",
+            "body": [
+                {
+                    "name": "address",
+                    "description": "Address of the event",
+                    "required": true
+                },
+                {
+                    "name": "type",
+                    "description": "Type of the event. Allowed values are : <i>activity</i>, <i>market</i>, and <i>event</i>. "
+                },
+                {
+                    "name": "category",
+                    "description": "Category corresponding to the event",
+                    "required": false
+                }
+            ],
+            "description": "Adds a new event to the database.",
+            "response_success": "Returns the object that has been inserted into the database."
+        },
+        {
+            "name": "Edit an event",
+            "path": "/api/event",
+            "method": "POST",
+            "body": [
+                {
+                    "name": "address",
+                    "description": "Adresse de l'événement",
+                    "required": true
+                },
+                {
+                    "name": "category",
+                    "description": "Catégorie correspondant à l'événement",
+                    "required": false
+                }
+            ],
+            "description": "Edits an existing event to the database.",
+            "response_success": "Returns the object that has been updated in the database."
+        },
+        {
+            "name": "List all events around a position",
+            "path": "/api/event",
+            "method": "GET",
+            "body": null,
+            "description": "Lists all events around the caller's position.",
+            "response_success": "Array with all the event objects."
+        },
+        {
+            "name": "List all events",
+            "path": "/api/event",
+            "method": "GET",
+            "body": null,
+            "description": "Lists all events linked to the account.",
+            "response_success": "Array with all the event objects."
+        },
+        {
+            "name": "Get event details",
+            "path": "/api/event/:eventid",
+            "method": "GET",
+            "body": null,
+            "description": "Gets an event from its ID.",
+            "response_success": "Returns the event object corresponding to the given ID."
+        },
+        {
+            "name": "Delete an event",
+            "path": "/api/event/:eventid",
+            "method": "DELETE",
+            "body": null,
+            "description": "Delete an event from its ID",
+            "response_success": "Returns an empty body."
+        }
+    ]
+]

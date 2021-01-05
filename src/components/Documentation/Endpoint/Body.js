@@ -4,14 +4,20 @@ export default class Body extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            tcha: function(arg){ return({
+                __html: arg
+            })}
+        }
     }
+
 
     render() {
         console.log(this.props.data)
         if (this.props.data == null) {
             return (
                 <div className="body">
-                    Il n'y a pas de corps pour cette requête.
+                    This request has no body.
                 </div>
             );
         }
@@ -22,16 +28,16 @@ export default class Body extends Component {
                 <div className="body">
                     <table>
                         <tr className="first_tr">
-                            <th className="col_name">Nom de l'attribut</th>
+                            <th className="col_name">Attribute name</th>
                             <th className="col_desc">Description</th>    
-                            <th className="col_req">Requis</th>
+                            <th className="col_req">Required</th>
                         </tr>
                     {this.props.data.map( (line, index) => {
                         return(
                             <tr>
-                                <td className="col_name">{line.name}</td>
-                                <td className="col_desc">{line.description}</td>
-                                <td className="col_req">{line.required ? 'Oui' : 'Non'}</td>    
+                                <td className="col_name" dangerouslySetInnerHTML={this.state.tcha(line.name)}></td>
+                                <td className="col_desc" dangerouslySetInnerHTML={this.state.tcha(line.description)}></td>
+                                <td className="col_req" dangerouslySetInnerHTML={this.state.tcha(line.required ? '<b>Oui</b>' : 'Non')}></td>    
                             </tr>
                             
                             );
