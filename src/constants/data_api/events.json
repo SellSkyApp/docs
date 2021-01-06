@@ -1,6 +1,132 @@
 [
     "Events",
     [
+        "Event structure",
+        [
+            {
+                "name":"name",
+                "description":"Name of the event.",
+                "type": "String"
+            },
+            {
+                "name":"descriptionShort",
+                "description":"Short sentence to illustrate the event.",
+                "type": "String"
+            },
+            {
+                "name":"descriptionFull",
+                "description":"Deeper description of the event.",
+                "type": "String"
+            },
+            {
+                "name":"addressFull",
+                "description":"Human-readable address.",
+                "type": "String"
+            },
+            {
+                "name":"address",
+                "description":"GeoJSON-formatted address. Refer to <a href='https://tools.ietf.org/html/rfc7946'>this address</a>.",
+                "type": "GeoJSON"
+            },
+            {
+                "name":"type",
+                "description":"Type of the event. Accepted types are <i>activity</i>, <i>market</i>, <i>event</i> or <i>other</i>.",
+                "type": "String"
+            },
+            {
+                "name":"categories",
+                "description":"Categories of the event. Accepted values are <b>TO DO</b>.",
+                "type": "String [ ]"
+            },
+            {
+                "name":"qualificatives",
+                "description":"Sub-categories without name restriction.",
+                "type": "String [ ]"
+            },
+            {
+                "name":"source",
+                "description":"Source of the information : internet, manually-added, etc.",
+                "type": "String"
+            },
+            {
+                "name":"openHoursFull",
+                "description":"Human-readable text for open hours.",
+                "type":"String"
+            },
+            {
+                "name":"openHours",
+                "description":"Arrays of open hours.",
+                "type":"<b> TO DO </b>"
+            },
+            {
+                "name":"price",
+                "description":"Description of the price.",
+                "type":"String"
+            },
+            {
+                "name":"outdoor",
+                "description":"Wether the activity is outdoor or not.",
+                "type":"Boolean"
+            },
+            {
+                "name":"imgEvent",
+                "description":"One image to be displayed.",
+                "type":"Buffer Image"
+            },
+            {
+                "name":"imgGallery",
+                "description":"All images to be displayed. Maximum 10 images.",
+                "type":"Buffer Image [ ]"
+            },
+            {
+                "name":"event",
+                "description":"Optionnal attributes if the event's type is <i>event</i>.",
+                "type":""
+            },
+            {
+                "name":"event.promotionalCode",
+                "description":"Promotional code to work for this event.",
+                "type":"String"
+            },
+            {
+                "name":"event.openPeriodFull",
+                "description":"Human-readable timespan in which the event is available.",
+                "type":"String"
+            },
+            {
+                "name":"event.openPeriod",
+                "description":"Timespan in which the event is available.",
+                "type":"String [ open period ] [ days ]"
+            },
+            {
+                "name":"activity",
+                "description":"Optionnal attributes if the event's type is <i>activity</i>.",
+                "type":""
+            },
+            {
+                "name":"activity.promotionalCode",
+                "description":"Promotional code to work for this event.",
+                "type":"String"
+            },
+            {
+                "name":"other",
+                "description":"Unclassified data.",
+                "type":""
+            },
+            {
+                "name":"other.website",
+                "description":"URL of a website related to the event.",
+                "type":"String"
+            },
+            {
+                "name":"other.notes",
+                "description":"Additional info, especially useful for a further database clean-up.",
+                "type":"String"
+            }
+            
+        ]
+    ],
+    [
         {
             "name": "Add an event",
             "path": "/api/event",
@@ -13,7 +139,7 @@
                 },
                 {
                     "name": "type",
-                    "description": "Type of the event. Allowed values are : <i>activity</i>, <i>market</i>, and <i>event</i>. "
+                    "description": "Type of the event. Allowed names are : <i>activity</i>, <i>market</i>, and <i>event</i>. "
                 },
                 {
                     "name": "category",

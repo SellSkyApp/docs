@@ -27,6 +27,17 @@
     text-transform: uppercase;
 }
 
+.data_structure{
+    width: 90%;
+    left: 10%;
+}
+.data_structure .data_structure_title{
+    line-height: 50px;
+    font-size: 40px;
+    color: rgb(113, 154, 89);
+    text-transform: uppercase;
+}
+
 .documentation .description{
     margin-left: 10px;
     color: gray;
@@ -45,3 +56,4 @@
     letter-spacing: 4px;
     font-weight: bolder;
 }
+

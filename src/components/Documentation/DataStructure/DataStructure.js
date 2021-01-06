@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './DataStructure.css'
 
 function tcha(arg){
     return({
@@ -7,11 +7,10 @@ function tcha(arg){
     })
 }
 
-export default class Body extends Component {
+export default class DataStructure extends Component {
 
     constructor(props) {
         super(props);
-        
     }
 
 
@@ -19,8 +18,8 @@ export default class Body extends Component {
         console.log(this.props.data)
         if (this.props.data == null) {
             return (
-                <div className="body">
-                    This request has no body.
+                <div className="data_structure_body">
+                    There is no specific data structure.
                 </div>
             );
         }
@@ -28,7 +27,7 @@ export default class Body extends Component {
         else {
             return (
 
-                <div className="body">
+                <div className="data_structure_body">
                     <table>
                         <tr className="first_tr">
                             <th className="col_name">Attribute name</th>
@@ -40,7 +39,7 @@ export default class Body extends Component {
                             <tr>
                                 <td className="col_name" dangerouslySetInnerHTML={tcha(line.name)}></td>
                                 <td className="col_desc" dangerouslySetInnerHTML={tcha(line.description)}></td>
-                                <td className="col_req" dangerouslySetInnerHTML={tcha(line.required ? '<b>Yes</b>' : 'No')}></td>    
+                                <td className="col_req" dangerouslySetInnerHTML={tcha(line.type)}></td>    
                             </tr>
                             
                             );
