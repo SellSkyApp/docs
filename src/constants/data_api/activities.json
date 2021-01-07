@@ -109,7 +109,7 @@
                 "name":"event.openPeriodFull",
                 "description":"Human-readable timespan in which the event is available.",
                 "type":"String",
-                "example": "Du lundi 8 février au mercredi 10 février."
+                "example": "On february, from monday the 8th to wednesday the 10th."
             },
             {
                 "name":"event.openPeriod",
@@ -145,7 +145,7 @@
                 "name":"other.notes",
                 "description":"Additional info, especially useful for a further database clean-up.",
                 "type":"String",
-                "example": "qqun qui dit 'je ne savais pas remplir tous les champs, j'ai fait au mieux, merci Sellsky pour ce que vous faites 😍😍'"
+                "example": "sahh what a bonheur"
             }
             
         ]
@@ -185,12 +185,12 @@
             "method": "POST",
             "body": [{
                 "name": "perimeter",
-                "description": "Perimeter used to check for activities around, in kilometers. Default value : 50 km",
+                "description": "Perimeter used to check for activities around, meters. Default value : 5.000 m",
                 "required": false
             },
             {
                 "name": "coordinates",
-                "description": "Array : [ coordinatesX, coordinatesY ] of the origin used to check for activities around.",
+                "description": "Array : [ longitude, latitude ] of the origin used to check for activities around.",
                 "required": true
             },
             {

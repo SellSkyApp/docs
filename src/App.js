@@ -15,9 +15,13 @@ function App() {
       <Router>
         <Paperbase>
           <Switch>
-            <Route exact path='/events'
+            <Route exact path='/activities'
               render={(props) => (
-                <Documentation {...props} source={'events.json'} />
+                <Documentation {...props} source={'activities.json'} />
+              )} />
+            <Route exact path='/city-tours'
+              render={(props) => (
+                <Documentation {...props} source={'city-tours.json'} />
               )} />
             <Route path="/" component={Error} />
           </Switch>
