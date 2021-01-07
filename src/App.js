@@ -11,17 +11,19 @@ import { theme } from './constants/theme';
 function App() {
   return (
     <ThemeProvider theme={theme}>
+
       <Router>
-        <Switch>
-            <Paperbase>
-              <Route exact path='/events'
-                    render={(props) => (
-                        <Documentation {...props} source={'events.json'} />
-                      )} />
-              <Route path="*" component={Error} />
-            </Paperbase>
-        </Switch>
+        <Paperbase>
+          <Switch>
+            <Route exact path='/events'
+              render={(props) => (
+                <Documentation {...props} source={'events.json'} />
+              )} />
+            <Route path="/" component={Error} />
+          </Switch>
+        </Paperbase>
       </Router>
+
     </ThemeProvider>
   );
 }

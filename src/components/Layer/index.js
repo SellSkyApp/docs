@@ -4,18 +4,18 @@ import { compose } from "recompose";
 import { Link, withRouter } from 'react-router-dom';
 
 import {
-    Grid,
-    Drawer,
-    AppBar,
-    Toolbar,
-    CssBaseline,
-    Typography,
-    Divider,
-    IconButton,
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemText
+  Grid,
+  Drawer,
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  Typography,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText
 } from '@material-ui/core';
 
 
@@ -51,15 +51,15 @@ const useStyles = (theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    whiteSpace: 'nowrap',
+    whiteSpace: 'nowrap'
   },
   drawerOpen: {
     width: drawerWidth,
-    overflowY: 'hidden',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    overflow: 'hidden'
   },
   drawerClose: {
     transition: theme.transitions.create('width', {
@@ -93,7 +93,7 @@ const useStyles = (theme) => ({
   itemCategory: {
     backgroundColor: '#232f3e',
     boxShadow: '0 -1px 0 #404854 inset',
-    padding: theme.spacing(0,2),
+    padding: theme.spacing(0, 2),
   },
   itemActive: {
     fontWeight: 'bold',
@@ -119,33 +119,33 @@ const useStyles = (theme) => ({
 
 
 const categories = [
-  { id: 'Home',    icon: <HomeIcon         style={{ fontSize: 30 }}/>, path: '/events'},
-  { id: 'Name 2',  icon: <PictureAsPdfIcon style={{ fontSize: 30 }}/>, path: '/name2'},
-  { id: 'Name 3',  icon: <LibraryBooksIcon style={{ fontSize: 30 }}/>, path: '/name3'},
-  { id: 'Name 4',  icon: <LibraryBooksIcon style={{ fontSize: 30 }}/>, path: '/name4'}
+  { id: 'Events', icon: <HomeIcon style={{ fontSize: 30 }} />, path: '/events' },
+  { id: 'Name 2', icon: <PictureAsPdfIcon style={{ fontSize: 30 }} />, path: '/name2' },
+  { id: 'Name 3', icon: <LibraryBooksIcon style={{ fontSize: 30 }} />, path: '/name3' },
+  { id: 'Name 4', icon: <LibraryBooksIcon style={{ fontSize: 30 }} />, path: '/name4' }
 ];
 
 
-class  Paperbase extends Component{
+class Paperbase extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       open: false
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     let drawerListener = document.getElementById('drawer-left')
-    if (drawerListener){
+    if (drawerListener) {
       drawerListener.addEventListener("mouseenter", this._handleDrawerOpen)
       drawerListener.addEventListener("mouseleave", this._handleDrawerOpen)
     }
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     let drawerListener = document.getElementById('drawer-left')
-    if (drawerListener){
+    if (drawerListener) {
       drawerListener.removeEventListener("mouseon", this._handleDrawerOpen)
       drawerListener.removeEventListener("mouseleave", this._handleDrawerOpen)
     }
@@ -153,43 +153,43 @@ class  Paperbase extends Component{
 
   _handleDrawerOpen = event => {
     console.log(event.type)
-    this.setState((prevState) => ({open: !prevState.open}))
+    this.setState((prevState) => ({ open: !prevState.open }))
   }
 
   render() {
     const { classes, children, location } = this.props;
     const { open } = this.state
     console.log(this.state)
-    return(
+    return (
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
           position="fixed"
           className={classes.appBar}
         >
-          <Toolbar>          
+          <Toolbar>
             <Grid container spacing={1} alignItems="center">
-                <Grid item>
-                  <IconButton
-                    color="inherit"
-                    aria-label="open drawer"
-                    onClick={this._handleDrawerOpen}
-                    edge="start"
-                    className={classes.menuButton}
-                  >
-                    <MenuIcon />
-                  </IconButton>
-                </Grid>
-                <Grid item>
-                  <Typography className={classes.title} noWrap>
-                    Sellsky
-                  </Typography>
-                </Grid>
+              <Grid item>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  onClick={this._handleDrawerOpen}
+                  edge="start"
+                  className={classes.menuButton}
+                >
+                  <MenuIcon />
+                </IconButton>
               </Grid>
+              <Grid item>
+                <Typography className={classes.title} noWrap>
+                  Sellsky
+                  </Typography>
+              </Grid>
+            </Grid>
           </Toolbar>
         </AppBar>
         <Drawer
-          id = "drawer-left"
+          id="drawer-left"
           variant="permanent"
           className={clsx(classes.drawer, {
             [classes.drawerOpen]: open,
@@ -202,39 +202,39 @@ class  Paperbase extends Component{
             }),
           }}
         >
-          <div className={classes.toolbar}/>
+          <div className={classes.toolbar} />
           <Divider />
           {
-              
-                  <List disablePadding style={{marginTop: 4}}>
-                  {
-                      categories.map(({ id: childId, icon, path }) => (
-                      <ListItem
-                          key={childId} button component={Link} to={path} 
-                          className={clsx(classes.item, location.pathname === path ? classes.itemActive : null)}
-                          >
-                          <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
-                          <ListItemText>
-                          <span style={{fontWeight: location.pathname === path ? 'bold' : 'normal'}}>{childId}</span>
-                          </ListItemText>
-                      </ListItem>
-                      ))
-                      }
-                  </List>
-              
+
+            <List disablePadding style={{ marginTop: 4 }}>
+              {
+                categories.map(({ id: childId, icon, path }) => (
+                  <ListItem
+                    key={childId} button component={Link} to={path}
+                    className={clsx(classes.item, location.pathname === path ? classes.itemActive : null)}
+                  >
+                    <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
+                    <ListItemText>
+                      <span style={{ fontWeight: location.pathname === path ? 'bold' : 'normal' }}>{childId}</span>
+                    </ListItemText>
+                  </ListItem>
+                ))
+              }
+            </List>
+
           }
           <div className={classes.footer}>
-            <Typography variant="body2" align="center" style={{color: 'white', fontWeight: 'bold'}}>
+            <Typography variant="body2" align="center" style={{ color: 'white', fontWeight: 'bold' }}>
               {
-                open ? <>Produit par Sellsky{new Date().getFullYear()}.</>
-                    : <>{new Date().getFullYear()}.</>
+                open ? <>Produit par Sellsky{new Date().getFullYear()}</>
+                  : <>{new Date().getFullYear()}</>
               }
             </Typography>
           </div>
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          { children }
+          {children}
         </main>
       </div>
     );
@@ -244,7 +244,7 @@ class  Paperbase extends Component{
 
 export default compose(
   withStyles(useStyles, {
-      name: 'Paperbase'
+    name: 'Paperbase'
   }),
   withRouter
 )(Paperbase);

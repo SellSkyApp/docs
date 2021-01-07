@@ -6,122 +6,146 @@
             {
                 "name":"name",
                 "description":"Name of the event.",
-                "type": "String"
+                "type": "String",
+                "example": "Open Doors day of ECE Paris"
             },
             {
                 "name":"descriptionShort",
                 "description":"Short sentence to illustrate the event.",
-                "type": "String"
+                "type": "String",
+                "example": "Come and visit ECE Paris."
             },
             {
                 "name":"descriptionFull",
                 "description":"Deeper description of the event.",
-                "type": "String"
+                "type": "String",
+                "example": "Learn more about the school, by visiting the Fablab, our different buildings and meet our different teachers to learn more about your future !"
             },
             {
                 "name":"addressFull",
                 "description":"Human-readable address.",
-                "type": "String"
+                "type": "String",
+                "example": "37 quai de Grenelle, Paris 75015"
             },
             {
                 "name":"address",
                 "description":"GeoJSON-formatted address. Refer to <a href='https://tools.ietf.org/html/rfc7946'>this address</a>.",
-                "type": "GeoJSON"
+                "type": "GeoJSON",
+                "example": "{\"type\":\"Point\",\"coordinates\":[2.287108898162842,48.85185370887906]}"
             },
             {
                 "name":"type",
                 "description":"Type of the event. Accepted types are <i>activity</i>, <i>market</i>, <i>event</i> or <i>other</i>.",
-                "type": "String"
+                "type": "String",
+                "example": "event"
             },
             {
                 "name":"categories",
                 "description":"Categories of the event. Accepted values are <b>TO DO</b>.",
-                "type": "String [ ]"
+                "type": "String [ ]",
+                "example": "[ \"Expo\", \"Salon/Animation\"]"
             },
             {
                 "name":"qualificatives",
                 "description":"Sub-categories without name restriction.",
-                "type": "String [ ]"
+                "type": "String [ ]",
+                "example": "[\"School\", \"Engineer\", \"Studies\"]"
             },
             {
                 "name":"source",
                 "description":"Source of the information : internet, manually-added, etc.",
-                "type": "String"
+                "type": "String",
+                "example": "SellskyAdmin"
             },
             {
                 "name":"openHoursFull",
                 "description":"Human-readable text for open hours.",
-                "type":"String"
+                "type":"String",
+                "example": "All three days from 8:00 to 12:00, and from 14:00 to 18:30."
             },
             {
                 "name":"openHours",
                 "description":"Arrays of open hours.",
-                "type":"<b> TO DO </b>"
+                "type":"<b> TO DO </b>",
+                "example": "[[[[8,00],[12,00]],[[14,00],[18,30]]],[[[8,00],[12,00]],[[14,00],[18,30]]],[[[8,00],[12,00]],[[14,00],[18,30]]],[],[],[],[]]. <i>Try pasting it down and expand it to actually see how it works ! </i>^__^"
             },
             {
                 "name":"price",
                 "description":"Description of the price.",
-                "type":"String"
+                "type":"String",
+                "example": "0"
             },
             {
                 "name":"outdoor",
                 "description":"Wether the activity is outdoor or not.",
-                "type":"Boolean"
+                "type":"Boolean",
+                "example": "false"
             },
             {
                 "name":"imgEvent",
                 "description":"One image to be displayed.",
-                "type":"Buffer Image"
+                "type":"Buffer Image",
+                "example": "<b>TODO</b>"
             },
             {
                 "name":"imgGallery",
                 "description":"All images to be displayed. Maximum 10 images.",
-                "type":"Buffer Image [ ]"
+                "type":"Buffer Image [ ]",
+                "example": "<b>TODO</b>"
             },
             {
                 "name":"event",
                 "description":"Optionnal attributes if the event's type is <i>event</i>.",
-                "type":""
+                "type":"",
+                "example": ""
             },
             {
                 "name":"event.promotionalCode",
                 "description":"Promotional code to work for this event.",
-                "type":"String"
+                "type":"String",
+                "example": "<i>null</i>"
             },
             {
                 "name":"event.openPeriodFull",
                 "description":"Human-readable timespan in which the event is available.",
-                "type":"String"
+                "type":"String",
+                "example": "Du lundi 8 février au mercredi 10 février."
             },
             {
                 "name":"event.openPeriod",
                 "description":"Timespan in which the event is available.",
-                "type":"String [ open period ] [ days ]"
+                "type":"String [ open period ] [ days ]",
+                "example": "[[1612779425, 1612952225]]"
             },
             {
                 "name":"activity",
                 "description":"Optionnal attributes if the event's type is <i>activity</i>.",
-                "type":""
+                "type":"",
+                "example": ""
             },
             {
                 "name":"activity.promotionalCode",
                 "description":"Promotional code to work for this event.",
-                "type":"String"
+                "type":"String",
+                "example": ""
             },
             {
                 "name":"other",
                 "description":"Unclassified data.",
-                "type":""
+                "type":"",
+                "example": ""
             },
             {
                 "name":"other.website",
                 "description":"URL of a website related to the event.",
-                "type":"String"
+                "type":"String",
+                "example": "www.ece.fr"
             },
             {
                 "name":"other.notes",
                 "description":"Additional info, especially useful for a further database clean-up.",
-                "type":"String"
+                "type":"String",
+                "example": "qqun qui dit 'je ne savais pas remplir tous les champs, j'ai fait au mieux, merci Sellsky pour ce que vous faites 😍😍'"
             }
             
         ]
