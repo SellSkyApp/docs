@@ -16,6 +16,7 @@
     transition: 0.2s;
 }
 
+
 .data_structure_body  td{
     padding-left: 20px;
     padding-right: 20px
@@ -68,4 +69,8 @@
     padding-right: 0;
     margin-left: 7%;
     padding-left: 10px;
+}
+ table th{    
+    text-align: center !important;
+    line-height: 250%;
 }
