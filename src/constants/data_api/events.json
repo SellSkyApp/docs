@@ -1,23 +1,23 @@
 [
-    "Events",
+    "Activities",
     [
-        "Event structure",
+        "Activity structure",
         [
             {
                 "name":"name",
-                "description":"Name of the event.",
+                "description":"Name of the activity.",
                 "type": "String",
                 "example": "Open Doors day of ECE Paris"
             },
             {
                 "name":"descriptionShort",
-                "description":"Short sentence to illustrate the event.",
+                "description":"Short sentence to illustrate the activity.",
                 "type": "String",
                 "example": "Come and visit ECE Paris."
             },
             {
                 "name":"descriptionFull",
-                "description":"Deeper description of the event.",
+                "description":"Deeper description of the activity.",
                 "type": "String",
                 "example": "Learn more about the school, by visiting the Fablab, our different buildings and meet our different teachers to learn more about your future !"
             },
@@ -35,15 +35,15 @@
             },
             {
                 "name":"type",
-                "description":"Type of the event. Accepted types are <i>activity</i>, <i>market</i>, <i>event</i> or <i>other</i>.",
+                "description":"Type of the activity. Accepted types are <i>activity</i>, <i>market</i>, <i>event</i> or <i>other</i>.",
                 "type": "String",
                 "example": "event"
             },
             {
                 "name":"categories",
-                "description":"Categories of the event. Accepted values are <b>TO DO</b>.",
+                "description":"Categories of the activity. Accepted values are : <br/><div style='text-align: left;'> For activities :[<i>culture</i>, <i>playful</i>, <i>adventure</i>, <i>sport</i>, <i>visit</i>, <i>discover</i>, <i>learn</i>, <i>healthcare</i>, <i>family</i>, <i>children</i>]<br/>For events : [<i>exhibition</i>, <i>music</i>, <i>show</i>, <i>sport</i>, <i>animation</i>, <i>party</i>, <i>family</i>, <i>children</i>, <i>local</i>, <i>social</i>]<br/>For markets : [<i>market</i>, <i>brocante</i>, <i>garagesale</i>, <i>artisan</i>].</div>",
                 "type": "String [ ]",
-                "example": "[ \"Expo\", \"Salon/Animation\"]"
+                "example": "[ \"exhibition\", \"show\"]"
             },
             {
                 "name":"qualificatives",
@@ -66,8 +66,8 @@
             {
                 "name":"openHours",
                 "description":"Arrays of open hours.",
-                "type":"<b> TO DO </b>",
-                "example": "[[[[8,00],[12,00]],[[14,00],[18,30]]],[[[8,00],[12,00]],[[14,00],[18,30]]],[[[8,00],[12,00]],[[14,00],[18,30]]],[],[],[],[]]. <i>Try pasting it down and expand it to actually see how it works ! </i>^__^"
+                "type":"Number [ semaine ] [ jour ] [ periode ] [ heure, minute ]",
+                "example": "[[[[8,0],[12,0]],[[14,0],[18,30]]],[[[8,0],[12,0]],[[14,0],[18,30]]],[[[8,0],[12,0]],[[14,0],[18,30]]],[],[],[],[]]. <i>Try pasting it down and expand it to actually see how it works ! </i>^__^"
             },
             {
                 "name":"price",
@@ -85,17 +85,17 @@
                 "name":"imgEvent",
                 "description":"One image to be displayed.",
                 "type":"Buffer Image",
-                "example": "<b>TODO</b>"
+                "example": "<b><span style='color: red'>TODO</span></b>"
             },
             {
                 "name":"imgGallery",
                 "description":"All images to be displayed. Maximum 10 images.",
                 "type":"Buffer Image [ ]",
-                "example": "<b>TODO</b>"
+                "example": "<b><span style='color: red'>TODO</span></b>"
             },
             {
                 "name":"event",
-                "description":"Optionnal attributes if the event's type is <i>event</i>.",
+                "description":"Optionnal attributes if the activity's type is <i>event</i>.",
                 "type":"",
                 "example": ""
             },
@@ -114,18 +114,18 @@
             {
                 "name":"event.openPeriod",
                 "description":"Timespan in which the event is available.",
-                "type":"String [ open period ] [ days ]",
+                "type":"Number [ open period ] [ days ]",
                 "example": "[[1612779425, 1612952225]]"
             },
             {
                 "name":"activity",
-                "description":"Optionnal attributes if the event's type is <i>activity</i>.",
+                "description":"Optionnal attributes if the activity's type is <i>activity</i>.",
                 "type":"",
                 "example": ""
             },
             {
                 "name":"activity.promotionalCode",
-                "description":"Promotional code to work for this event.",
+                "description":"Promotional code to work for this activity.",
                 "type":"String",
                 "example": ""
             },
@@ -137,7 +137,7 @@
             },
             {
                 "name":"other.website",
-                "description":"URL of a website related to the event.",
+                "description":"URL of a website related to the activity.",
                 "type":"String",
                 "example": "www.ece.fr"
             },
@@ -152,77 +152,76 @@
     ],
     [
         {
-            "name": "Add an event",
-            "path": "/api/event",
+            "name": "Add an activity",
+            "path": "/api/activity",
             "method": "POST",
             "body": [
                 {
-                    "name": "address",
-                    "description": "Address of the event",
+                    "name": "name",
+                    "description": "Name of the activity",
                     "required": true
-                },
-                {
-                    "name": "type",
-                    "description": "Type of the event. Allowed names are : <i>activity</i>, <i>market</i>, and <i>event</i>. "
-                },
-                {
-                    "name": "category",
-                    "description": "Category corresponding to the event",
-                    "required": false
                 }
             ],
-            "description": "Adds a new event to the database.",
+            "description": "Adds a new activity to the database.",
             "response_success": "Returns the object that has been inserted into the database."
         },
         {
-            "name": "Edit an event",
-            "path": "/api/event",
+            "name": "Edit an activity",
+            "path": "/api/activity",
             "method": "POST",
             "body": [
                 {
-                    "name": "address",
-                    "description": "Adresse de l'événement",
+                    "name": "name",
+                    "description": "Name of the activity",
                     "required": true
-                },
-                {
-                    "name": "category",
-                    "description": "Catégorie correspondant à l'événement",
-                    "required": false
                 }
             ],
-            "description": "Edits an existing event to the database.",
+            "description": "Edits an existing activity to the database.",
             "response_success": "Returns the object that has been updated in the database."
         },
         {
-            "name": "List all events around a position",
-            "path": "/api/event",
-            "method": "GET",
-            "body": null,
-            "description": "Lists all events around the caller's position.",
-            "response_success": "Array with all the event objects."
+            "name": "List all activities around a position",
+            "path": "/api/activities-around",
+            "method": "POST",
+            "body": [{
+                "name": "perimeter",
+                "description": "Perimeter used to check for activities around, in kilometers. Default value : 50 km",
+                "required": false
+            },
+            {
+                "name": "coordinates",
+                "description": "Array : [ coordinatesX, coordinatesY ] of the origin used to check for activities around.",
+                "required": true
+            },
+            {
+                "name": "filters",
+                "description": "Document with attributes to be filtered. Syntax <b><span style='color: red'>TODO</span></b>."
+            }],
+            "description": "Lists all activities around the specified position, with the according filters.",
+            "response_success": "Array with all the activity objects found."
         },
         {
-            "name": "List all events",
-            "path": "/api/event",
+            "name": "List all activities",
+            "path": "/api/activity",
             "method": "GET",
             "body": null,
-            "description": "Lists all events linked to the account.",
-            "response_success": "Array with all the event objects."
+            "description": "Lists all activities linked to the account.",
+            "response_success": "Array with all the activity objects."
         },
         {
-            "name": "Get event details",
-            "path": "/api/event/:eventid",
+            "name": "Get activity details",
+            "path": "/api/activity/<i>:activityId</i>",
             "method": "GET",
             "body": null,
-            "description": "Gets an event from its ID.",
-            "response_success": "Returns the event object corresponding to the given ID."
+            "description": "Gets an activity from its ID.",
+            "response_success": "Returns the activity object found."
         },
         {
-            "name": "Delete an event",
-            "path": "/api/event/:eventid",
+            "name": "Delete an activity",
+            "path": "/api/activity/<i>:activityId</i>",
             "method": "DELETE",
             "body": null,
-            "description": "Delete an event from its ID",
+            "description": "Delete an activity from its ID",
             "response_success": "Returns an empty body."
         }
     ]

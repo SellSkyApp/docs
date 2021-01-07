@@ -45,6 +45,10 @@
     text-align: left;
 }
 
+.data_structure_body .col_desc{
+    text-align: left;
+}
+
 .data_structure_body .col_type{width: 25%}
 
 .data_structure_body .subtitle{
