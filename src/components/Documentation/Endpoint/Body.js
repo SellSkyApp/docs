@@ -16,7 +16,6 @@ export default class Body extends Component {
 
 
     render() {
-        console.log(this.props.data)
         if (this.props.data == null) {
             return (
                 <div className="body">

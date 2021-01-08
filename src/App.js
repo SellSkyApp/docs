@@ -23,6 +23,10 @@ function App() {
               render={(props) => (
                 <Documentation {...props} source={'city-tours.json'} />
               )} />
+              <Route exact path='/geojson'
+              render={(props) => (
+                <Documentation {...props} source={'geojson.json'} />
+              )} />
             <Route path="/" component={Error} />
           </Switch>
         </Paperbase>

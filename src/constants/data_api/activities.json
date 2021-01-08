@@ -29,7 +29,7 @@
             },
             {
                 "name":"address",
-                "description":"GeoJSON-formatted address. Refer to <a href='https://tools.ietf.org/html/rfc7946'>this address</a>.",
+                "description":"GeoJSON-formatted address. Refer to <a href='/geojson'>this address</a>.",
                 "type": "GeoJSON",
                 "example": "{\"type\":\"Point\",\"coordinates\":[2.287108898162842,48.85185370887906]}"
             },
@@ -198,7 +198,7 @@
                 "description": "Document with attributes to be filtered. Syntax <b><span style='color: red'>TODO</span></b>."
             }],
             "description": "Lists all activities around the specified position, with the according filters.",
-            "response_success": "Array with all the activity objects found."
+            "response_success": "Array with all the _id fields of the activity objects found, sorted by distance (from closest to farthest)."
         },
         {
             "name": "List all activities",

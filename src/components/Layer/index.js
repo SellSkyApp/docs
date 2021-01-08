@@ -119,8 +119,8 @@ const useStyles = (theme) => ({
 
 
 const categories = [
-  { id: 'Events', icon: <HomeIcon style={{ fontSize: 30 }} />, path: '/events' },
-  { id: 'Name 2', icon: <PictureAsPdfIcon style={{ fontSize: 30 }} />, path: '/name2' },
+  { id: 'Activities', icon: <HomeIcon style={{ fontSize: 30 }} />, path: '/activities' },
+  { id: 'GeoJSON', icon: <PictureAsPdfIcon style={{ fontSize: 30 }} />, path: '/geojson' },
   { id: 'Name 3', icon: <LibraryBooksIcon style={{ fontSize: 30 }} />, path: '/name3' },
   { id: 'Name 4', icon: <LibraryBooksIcon style={{ fontSize: 30 }} />, path: '/name4' }
 ];
@@ -152,14 +152,12 @@ class Paperbase extends Component {
   }
 
   _handleDrawerOpen = event => {
-    console.log(event.type)
     this.setState((prevState) => ({ open: !prevState.open }))
   }
 
   render() {
     const { classes, children, location } = this.props;
     const { open } = this.state
-    console.log(this.state)
     return (
       <div className={classes.root}>
         <CssBaseline />

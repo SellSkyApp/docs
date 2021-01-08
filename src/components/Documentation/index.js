@@ -8,28 +8,29 @@ import DataStructure from "./DataStructure/DataStructure";
 
 export default class Documentation extends Component {
   constructor(props) {
-    let path = "../../constants/data_api/";
     super(props);
-    let API = require("../../constants/data_api/" + props.source);
-    this.state = {
-      title: API[0],
-      data_structure: API[1],
-      content: API[2],
-    };
   }
 
   render() {
+    let API = require("../../constants/data_api/" + this.props.source);
+    let data = {
+      title: API[0],
+      data_structure: API[1],
+      content: API[2],
+      current_file: this.props.source
+    }
+
     return (
       <Grid>
-        <div className="title">{this.state.title}</div>
+        <div className="title">{data.title}</div>
         <div className="data_structure">
           <span className="data_structure_title">
-            {this.state.data_structure[0]}
+            {data.data_structure[0]}
           </span>
-          <DataStructure data={this.state.data_structure[1]} />
+          <DataStructure data={data.data_structure[1]} />
         </div>
         <div className="documentation">
-          {this.state.content.map((line, index) => (
+          {data.content.map((line, index) => (
             <Endpoint data={line} />
           ))}
         </div>

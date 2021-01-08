@@ -1,0 +1,44 @@
+[
+    "GeoJSON",
+    [
+        "GeoJSON structure",
+        [
+            {
+                "name":"type",
+                "description": "type of the geometry object",
+                "type": "String",
+                "example":""
+            }
+        ]
+    ],
+    [
+        {
+            "name": "Encode to GeoJSON format",
+            "path": "/api/geojson/encode",
+            "method": "POST",
+            "body": [
+                {
+                    "name":"addressFull",
+                    "description": "Human-readable address to be converted to GeoJSON format",
+                    "required": true
+                }
+            ],
+            "description": "Converts an address \"in clear\" to a GeoJSON object.",
+            "response_success": "Returns the converted GeoJSON object that has been created."
+        },
+        {
+            "name": "Decode from GeoJSON format",
+            "path": "/api/geojson/decode",
+            "method": "POST",
+            "body": [
+                {
+                    "name":"address",
+                    "description": "GeoJSON encoded address to be converted to a string.",
+                    "required": true
+                }
+            ],
+            "description": "Converts an address in a GeoJSON object to a string.",
+            "response_success": "Returns the converted string that has been created."
+        }
+    ]
+]
