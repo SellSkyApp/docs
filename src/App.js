@@ -15,11 +15,11 @@ function App() {
       <Router>
         <Paperbase>
           <Switch>
-            <Route exact path='/activities'
+            <Route exact path='/activity'
               render={(props) => (
                 <Documentation {...props} source={'activities.json'} />
               )} />
-            <Route exact path='/city-tours'
+            <Route exact path='/city-tour'
               render={(props) => (
                 <Documentation {...props} source={'city-tours.json'} />
               )} />

@@ -1,0 +1,132 @@
+[
+    "City Tour",
+    [
+        "City Tour structure",
+        [
+            {
+                "name":"name",
+                "description": "Name of the City Tour",
+                "type": "String",
+                "example": "Visite à Lille chez les Carons"
+            },
+            {
+                "name":"userId",
+                "description":"Owner of the city tour.",
+                "type":"String",
+                "example":"<span class='todo'>TODO</span>"
+            },
+            {
+                "name":"type",
+                "description":"The type of City Tour. Accepted values are <i>classic</i>, <i>guided</i>, <i>adventure</i>.",
+                "type":"String",
+                "example":"classic"
+            },
+            {
+                "name":"startingPoint",
+                "description":"Point where the city tour shall start by.</br>If the specified value is an activity id, the starting point will be the related activity position.",
+                "type":"GeoJSON",
+                "example":"<span class='todo'>TODO</span>"
+            },
+            {
+                "name":"endingPoint",
+                "description":"Point where the city tour shall end by.</br>If the specified value is an id, the ending point will be the related activity position.<br/>If the specified value is <i>null</i>, the ending point will be the starting point.",
+                "type":"GeoJSON",
+                "example":"<span class='todo'>TODO</span>"
+            },
+            {
+                "name":"activities",
+                "description":"Array of the different activities to be visited, ordered by visit order.",
+                "type":" String [ activityId ]",
+                "example":"<span class='todo'>TODO</span>"
+            },
+            {
+                "name":"price",
+                "description":"Price of the whole city tour.",
+                "type":"String",
+                "example":"10,50€"
+            },
+            {
+                "name": "duration",
+                "description": "Estimated travelling time of the whole city tour (without visit time), in minutes.",
+                "type": "Number",
+                "example": "73"
+            },
+            {
+                "name":"distance",
+                "description":"Estimated distance of the whole city tour, in meters.",
+                "type":"Number",
+                "example":"1453"
+            },
+            {
+                "name":"?",
+                "description":"?",
+                "type":"?",
+                "example":"?"
+            }
+        ]
+    ],
+    [
+        {
+            "name": "Get a city tour by its id",
+            "path": "/api/city-tour/<i>:cityTourId</i>",
+            "method": "GET",
+            "body": null,
+            "description": "Gets a city tour object by its id.",
+            "response_success":"Returns the corresponding city tour."
+        },
+        {
+            "name": "Add a city tour",
+            "path": "/api/city-tour",
+            "method": "POST",
+            "body": [
+                {
+                    "name":"userId",
+                    "description": "Owner of the city tour.",
+                    "required": true
+                },
+                {
+                    "name":"activities",
+                    "description": "Array of the different activities to be visited, ordered by visit order.",
+                    "required": true
+                }
+            ],
+            "description": "Adds a new city-tour for a user.",
+            "response_success":"Returns the city tour object that has been inserted in the database."
+        },
+        {
+            "name": "Update a city tour",
+            "path": "/api/city-tour/<i>:cityTourId</i>",
+            "method": "POST",
+            "body": [
+                {
+                    "name":"activities",
+                    "description": "Array of the different activities to be visited, ordered by visit order.",
+                    "required": true
+                },
+                {
+                    "name":"",
+                    "description": "",
+                    "required": true
+                }
+            ],
+            "description": "Updates an existing city tour to the database.",
+            "response_success":"Returns the city-tour object that has been inserted in the database."
+        },
+        {
+            "name": "List a user's city tours",
+            "path": "/api/city-tour/user/<i>:userId</i>",
+            "method": "GET",
+            "body": null,
+            "description": "Gets all the city tours owned by a user.",
+            "response_success":"Returns an array of the ids of the city tours owned by a user."
+        },
+        {
+            "name": "Delete a city tour by its id",
+            "path": "/api/city-tour/<i>:cityTourId</i>",
+            "method": "DELETE",
+            "body": null,
+            "description": "Deletes a city tour, given its id.",
+            "response_success":"Returns an empty body."
+        }
+    ]
+]

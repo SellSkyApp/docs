@@ -25,7 +25,9 @@ import HomeIcon from '@material-ui/icons/Home';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import ExploreIcon from '@material-ui/icons/Explore';
+import MapIcon from '@material-ui/icons/Map';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 //import { matchRoute } from '../../utils/utilsRouter'
 
 //import * as ROUTE from '../../constants/routes'
@@ -119,10 +121,9 @@ const useStyles = (theme) => ({
 
 
 const categories = [
-  { id: 'Activities', icon: <HomeIcon style={{ fontSize: 30 }} />, path: '/activities' },
-  { id: 'GeoJSON', icon: <PictureAsPdfIcon style={{ fontSize: 30 }} />, path: '/geojson' },
-  { id: 'Name 3', icon: <LibraryBooksIcon style={{ fontSize: 30 }} />, path: '/name3' },
-  { id: 'Name 4', icon: <LibraryBooksIcon style={{ fontSize: 30 }} />, path: '/name4' }
+  { id: 'Activity', icon: <AccountBalanceIcon style={{ fontSize: 30 }} />, path: '/activity' },
+  { id: 'GeoJSON', icon: <MapIcon style={{ fontSize: 30 }} />, path: '/geojson' },
+  { id: 'City Tour', icon: <ExploreIcon style={{ fontSize: 30 }} />, path: '/city-tour' }
 ];
 
 
@@ -224,7 +225,7 @@ class Paperbase extends Component {
           <div className={classes.footer}>
             <Typography variant="body2" align="center" style={{ color: 'white', fontWeight: 'bold' }}>
               {
-                open ? <>Produit par Sellsky{new Date().getFullYear()}</>
+                open ? <>Made by Sellsky{new Date().getFullYear()}</>
                   : <>{new Date().getFullYear()}</>
               }
             </Typography>

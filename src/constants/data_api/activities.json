@@ -166,8 +166,8 @@
             "response_success": "Returns the object that has been inserted into the database."
         },
         {
-            "name": "Edit an activity",
-            "path": "/api/activity",
+            "name": "Update an activity",
+            "path": "/api/activity/<i>:activityId</i>",
             "method": "POST",
             "body": [
                 {
@@ -176,8 +176,8 @@
                     "required": true
                 }
             ],
-            "description": "Edits an existing activity to the database.",
-            "response_success": "Returns the object that has been updated in the database."
+            "description": "Update an existing activity to the database.",
+            "response_success": "Returns the activity object that has been updated in the database."
         },
         {
             "name": "List all activities around a position",
@@ -221,7 +221,7 @@
             "path": "/api/activity/<i>:activityId</i>",
             "method": "DELETE",
             "body": null,
-            "description": "Delete an activity from its ID",
+            "description": "Delete an activity by its ID",
             "response_success": "Returns an empty body."
         }
     ]
