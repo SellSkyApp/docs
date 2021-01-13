@@ -1,0 +1,123 @@
+[
+    "Users",
+    [
+        "User structure",
+        [
+            {
+                "name":"pseudonym",
+                "description":"User's pseudonym. Unique.",
+                "type":"String",
+                "example": "Victor"
+            },
+            {
+                "name":"emailAddress",
+                "description":"User's email address. Unique.",
+                "type":"String",
+                "example": "victor@vodka.com"
+            },
+            {
+                "name":"passwordHash",
+                "description":"User's password, hashed following the good practices. See <a href='https://crackstation.net/hashing-security.htm'>this site</a> for more information on hashing. Hidden.",
+                "type":"String",
+                "example": "$2y$12$Ev4m73.DftPYs.VTD7BMReZgH5kgAeYNNv66B/ZsY7VKXLq5JLcby "
+            },
+            {
+                "name":"admin",
+                "description":"Wether the user is admin or not. Might be updated in the future, if we need more than just 2 levels of rights. Can not be updated through the <i>Update user</i> endpoint. Hidden.",
+                "type":"Boolean",
+                "example": "true"
+            },
+            {
+                "name":"verificationToken",
+                "description":"Token used to authenticate users on the API calls. Unique. Can not be updated through the <i>Update user</i> endpoint, see the Authentication documentation. Hidden.",
+                "type":"String",
+                "example": "<span class='todo'>?</span>"
+            },
+            {
+                "name":"savedCityTours",
+                "description":"List of saved city tours for a user.",
+                "type":"String [ city tour id ]",
+                "example": "[ \"?\", \"?\", \"?\"]"
+            },
+            {
+                "name":"savedParameters",
+                "description":"Parameters used on the app <span class='todo'>WIP</span>.",
+                "type":"<span class='todo'>WIP</span>",
+                "example": "<span class='todo'>WIP</span>"
+            },
+            {
+                "name":"cookies",
+                "description":"Saved devices where a user shall not be asked his credentials. Hidden.",
+                "type":"String [ device ] [ <span class='todo'>nameDevice, userAgent, sessionId </span>]",
+                "example": "<span class='todo'>WIP</span>"
+            }
+        ]
+    ],
+    [
+        {
+            "name": "Create a user",
+            "path": "/api/user",
+            "method": "POST",
+            "body": [
+                {
+                    "name": "emailAddress",
+                    "description": "User's email address.",
+                    "required": true
+                },
+                {
+                    "name": "passwordEncrypted",
+                    "description": "User's encrypted password, that will be decrypted then hashed into database. Please note that this is <b>not</b> the <i>passwordHash</i> attribute that shall eventually be stored in the database.",
+                    "required": true
+                },
+                {
+                    "name": "pseudonym",
+                    "description": "User's pseudonym",
+                    "required": true
+                },
+                {
+                    "name": "cookies",
+                    "description": "Saved devices where a user shall not be asked his credentials.",
+                    "required": false
+                }
+            ],
+            "description": "Creates a new user, using a client-side encrypted password to be decrypted then stored into the database.",
+            "response_success": "Returns the user's non-hidden fields."
+        },
+        {
+            "name": "",
+            "path": "",
+            "method": "",
+            "body": [
+                {
+                    "name": "",
+                    "description": "",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "name": "",
+            "path": "",
+            "method": "",
+            "body": [
+                {
+                    "name": "",
+                    "description": "",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "name": "",
+            "path": "",
+            "method": "",
+            "body": [
+                {
+                    "name": "",
+                    "description": "",
+                    "required": true
+                }
+            ]
+        }
+    ]
+]

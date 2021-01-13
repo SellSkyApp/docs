@@ -28,6 +28,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ExploreIcon from '@material-ui/icons/Explore';
 import MapIcon from '@material-ui/icons/Map';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 //import { matchRoute } from '../../utils/utilsRouter'
 
 //import * as ROUTE from '../../constants/routes'
@@ -123,7 +124,8 @@ const useStyles = (theme) => ({
 const categories = [
   { id: 'Activity', icon: <AccountBalanceIcon style={{ fontSize: 30 }} />, path: '/activity' },
   { id: 'GeoJSON', icon: <MapIcon style={{ fontSize: 30 }} />, path: '/geojson' },
-  { id: 'City Tour', icon: <ExploreIcon style={{ fontSize: 30 }} />, path: '/city-tour' }
+  { id: 'City Tour', icon: <ExploreIcon style={{ fontSize: 30 }} />, path: '/city-tour' },
+  { id: 'User', icon: <PersonAddIcon style={{ fontSize: 30 }} />, path: '/user' }
 ];
 
 

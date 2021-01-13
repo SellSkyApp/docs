@@ -5,7 +5,7 @@
         [
             {
                 "name":"type",
-                "description": "type of the geometry object",
+                "description": "Type of the geometry object",
                 "type": "String",
                 "example":""
             }
