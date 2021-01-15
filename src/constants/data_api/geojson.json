@@ -24,7 +24,8 @@
                 }
             ],
             "description": "Converts an address \"in clear\" to a GeoJSON object.",
-            "response_success": "Returns the converted GeoJSON object that has been created."
+            "response_success": "Returns the converted GeoJSON object that has been created.",
+            "authentication": true
         },
         {
             "name": "Decode from GeoJSON format",
@@ -38,7 +39,8 @@
                 }
             ],
             "description": "Converts an address in a GeoJSON object to a string.",
-            "response_success": "Returns the converted string that has been created."
+            "response_success": "Returns the converted string that has been created.",
+            "authentication": true
         }
     ]
 ]

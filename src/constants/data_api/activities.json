@@ -163,7 +163,8 @@
                 }
             ],
             "description": "Adds a new activity to the database.",
-            "response_success": "Returns the object that has been inserted into the database."
+            "response_success": "Returns the object that has been inserted into the database.",
+            "authentication": "admin"
         },
         {
             "name": "Update an activity",
@@ -177,7 +178,8 @@
                 }
             ],
             "description": "Update an existing activity to the database.",
-            "response_success": "Returns the activity object that has been updated in the database."
+            "response_success": "Returns the activity object that has been updated in the database.",
+            "authentication": "admin"
         },
         {
             "name": "List all activities around a position",
@@ -185,7 +187,7 @@
             "method": "POST",
             "body": [{
                 "name": "perimeter",
-                "description": "Perimeter used to check for activities around, meters. Default value : 5.000 m",
+                "description": "Perimeter used to check for activities around, in meters. Default value : 5.000 m",
                 "required": false
             },
             {
@@ -194,19 +196,45 @@
                 "required": true
             },
             {
-                "name": "filters",
-                "description": "Document with attributes to be filtered. Syntax <b><span style='color: red'>TODO</span></b>."
-            }],
-            "description": "Lists all activities around the specified position, with the according filters.",
+                "name": "price",
+                "description": "Price range in an array. If <i>null</i> is specified for one value, then there is no limit for this side. Number [ ]. Example : [50, null] will display all activities whose price is above 50."
+            },
+            {
+                "name": "outdoor",
+                "description": "Boolean specifiying to filter activities depending on the outdoor attribute of an activity. By default, no filter is applied."
+            },
+            {
+                "name": "categories",
+                "description": "Array with all the categories we are looking for. Example : [\"activity\", \"restaurant\"]"
+            },
+            {
+                "name": "queryResults",
+                "description": "Specifies how many rows are to be returned by the API. If not specified, all rows will be returned.",
+                "required": false
+            },
+            {
+                "name": "queryResults.start",
+                "description": "Specifies the start of the rows that should be returned.",
+                "required": true
+            },
+            {
+                "name": "queryResults.queryNumber",
+                "description": "Specifies how many rows are to be returned by the API.",
+                "required": true
+            }
+            
+        ],
+            "description": "Lists all activities around the specified position, with the according filters.<br/>By default, no filters are applied : meaning all objects in range can be found.",
             "response_success": "Array with all the _id fields of the activity objects found, sorted by distance (from closest to farthest)."
         },
         {
-            "name": "List all activities",
+            "name": "<span class='todo'>List all activities</span>",
             "path": "/api/activity",
             "method": "GET",
             "body": null,
             "description": "Lists all activities linked to the account.",
-            "response_success": "Array with all the activity objects."
+            "response_success": "Array with all the activity objects.",
+            "authentication": true
         },
         {
             "name": "Get activity details",
@@ -221,8 +249,9 @@
             "path": "/api/activity/<i>:activityId</i>",
             "method": "DELETE",
             "body": null,
-            "description": "Delete an activity by its ID",
-            "response_success": "Returns an empty body."
+            "description": "Delete an activity by its ID.",
+            "response_success": "Returns an empty body.",
+            "authentication": "admin"
         }
     ]
 ]

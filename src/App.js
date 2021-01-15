@@ -31,6 +31,10 @@ function App() {
               render={(props) => (
                 <Documentation {...props} source={'users.json'} />
               )} />
+              <Route exact path='/authentication'
+              render={(props) => (
+                <Documentation {...props} source={'authentication.json'} />
+              )} />
             <Route path="/" component={Error} />
           </Switch>
         </Paperbase>

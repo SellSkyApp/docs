@@ -15,10 +15,10 @@ export default class DataStructure extends Component {
 
 
     render() {
-        if (this.props.data == null) {
+        if (this.props.data.length == 1) {
             return (
                 <div className="data_structure_body">
-                    There is no specific data structure.
+                    There is no specific data structure. Follow the different methods described below.
                 </div>
             );
         }
@@ -34,7 +34,7 @@ export default class DataStructure extends Component {
                             <th className="col_type">Type</th>
                             <th className="col_example">Example</th>
                         </tr>
-                    {this.props.data.map( (line, index) => {
+                    {this.props.data[1].map( (line, index) => {
                         return(
                             <tr>
                                 <td className="col_name" dangerouslySetInnerHTML={tcha(line.name)}></td>

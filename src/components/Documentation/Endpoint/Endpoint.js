@@ -1,6 +1,7 @@
 import React from 'react';
 import './Endpoint.css';
 import Body from './Body';
+import NeedsAuthentication from './NeedsAuthentication'
 
 function tcha (arg){
     return({
@@ -9,8 +10,9 @@ function tcha (arg){
 }
 const Endpoint = (props) => (
     <div className="endpoint" >
-        <div className="name" dangerouslySetInnerHTML={tcha(props.data.name)}>
-        </div>
+        <NeedsAuthentication data={props.data.authentication}/>
+        <span className="name" dangerouslySetInnerHTML={tcha(props.data.name)}>
+        </span>
 
         <div className="description" dangerouslySetInnerHTML={tcha(props.data.description)}>
         </div>

@@ -18,8 +18,8 @@ export default class Documentation extends Component {
       data_structure: API[1],
       content: API[2],
       current_file: this.props.source
+      
     }
-
     return (
       <Grid>
         <div className="title">{data.title}</div>
@@ -27,7 +27,7 @@ export default class Documentation extends Component {
           <span className="data_structure_title">
             {data.data_structure[0]}
           </span>
-          <DataStructure data={data.data_structure[1]} />
+          <DataStructure data={data.data_structure} />
         </div>
         <div className="documentation">
           {data.content.map((line, index) => (

@@ -29,6 +29,7 @@ import ExploreIcon from '@material-ui/icons/Explore';
 import MapIcon from '@material-ui/icons/Map';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 //import { matchRoute } from '../../utils/utilsRouter'
 
 //import * as ROUTE from '../../constants/routes'
@@ -125,7 +126,8 @@ const categories = [
   { id: 'Activity', icon: <AccountBalanceIcon style={{ fontSize: 30 }} />, path: '/activity' },
   { id: 'GeoJSON', icon: <MapIcon style={{ fontSize: 30 }} />, path: '/geojson' },
   { id: 'City Tour', icon: <ExploreIcon style={{ fontSize: 30 }} />, path: '/city-tour' },
-  { id: 'User', icon: <PersonAddIcon style={{ fontSize: 30 }} />, path: '/user' }
+  { id: 'User', icon: <PersonAddIcon style={{ fontSize: 30 }} />, path: '/user' },
+  { id: 'Authentication', icon: <VpnKeyIcon style={{ fontSize: 30 }} />, path: '/authentication' }
 ];
 
 

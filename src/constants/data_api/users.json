@@ -84,40 +84,52 @@
             "response_success": "Returns the user's non-hidden fields."
         },
         {
-            "name": "",
-            "path": "",
-            "method": "",
+            "name": "Update a user",
+            "path": "/api/user/<i>:userId</i>",
+            "method": "POST",
             "body": [
                 {
-                    "name": "",
-                    "description": "",
-                    "required": true
+                    "name": "emailAddress",
+                    "description": "User's email address.",
+                    "required": false
+                },
+                {
+                    "name": "passwordEncrypted",
+                    "description": "User's encrypted password, that will be decrypted then hashed into database. Please note that this is <b>not</b> the <i>passwordHash</i> attribute that shall eventually be stored in the database.",
+                    "required": false
+                },
+                {
+                    "name": "pseudonym",
+                    "description": "User's pseudonym",
+                    "required": false
+                },
+                {
+                    "name": "cookies",
+                    "description": "Saved devices where a user shall not be asked his credentials.",
+                    "required": false
                 }
-            ]
+            ],
+            "description": "Updates a user, using a client-side encrypted password to be decrypted then stored into the database.",
+            "response_success": "Returns the user's non-hidden fields.",
+            "authentication": true
         },
         {
-            "name": "",
-            "path": "",
-            "method": "",
-            "body": [
-                {
-                    "name": "",
-                    "description": "",
-                    "required": true
-                }
-            ]
+            "name": "Delete a user",
+            "path": "/api/user/<i>:userId</i>",
+            "method": "DELETE",
+            "body": null,
+            "description": "Deletes a user. Deletes all city-tours which belong to this user.",
+            "response_success": "Returns an empty body.",
+            "authentication": true
         },
         {
-            "name": "",
-            "path": "",
-            "method": "",
-            "body": [
-                {
-                    "name": "",
-                    "description": "",
-                    "required": true
-                }
-            ]
+            "name": "Get a user",
+            "path": "/api/user/<i>:userId</i>",
+            "method": "GET",
+            "body": null,
+            "description":"Gets the user non-hidden fields.",
+            "response_success":"Returns the non-hidden fields from the user object found.",
+            "authentication": true
         }
     ]
 ]

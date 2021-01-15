@@ -1,0 +1,35 @@
+[
+    "Authentication",
+    [
+        "Authentication structure"
+    ],
+    [
+        {
+            "name": "Log in",
+            "path": "/api/authentication/get-token",
+            "method": "POST",
+            "body": [
+                {
+                    "name": "emailAddress",
+                    "description": "User's email address.",
+                    "required": true
+                },
+                {
+                    "name": "passwordEncrypted",
+                    "description": "User's encrypted password, that will be decrypted then hashed into database. Please note that this is <b>not</b> the <i>passwordHash</i> attribute that shall eventually be stored in the database.",
+                    "required": true
+                }
+            ],
+            "description": "Gets the authentication token that can be used to authenticate user when requesting ressources.This token is valid as long as the user does not disconnect on the device they are currently using.",
+            "response_success": "Returns the token."
+        },
+        {
+            "name": "Get public key",
+            "path": "/api/authentication/get-public-key",
+            "method": "GET",
+            "body": null,
+            "description":"Gets the public key in use.",
+            "response_success":"Returns the public key in use."
+        }
+    ]
+]

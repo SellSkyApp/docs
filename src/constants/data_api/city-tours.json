@@ -11,7 +11,7 @@
             },
             {
                 "name":"userId",
-                "description":"Owner of the city tour.",
+                "description":"Owner of the city tour.<br/>If the value is null, then the city-tour is a tour made by Sellsky. It can be seen by everybody, but modified only by an admin account.",
                 "type":"String",
                 "example":"<span class='todo'>TODO</span>"
             },
@@ -71,8 +71,9 @@
             "path": "/api/city-tour/<i>:cityTourId</i>",
             "method": "GET",
             "body": null,
-            "description": "Gets a city tour object by its id.",
-            "response_success":"Returns the corresponding city tour."
+            "description": "Gets a city tour object by its id.<br/>Can only get a city-tour if the user is its owner, if the city tour is private.",
+            "response_success":"Returns the corresponding city tour.",
+            "authentication": true
         },
         {
             "name": "Add a city tour",
@@ -91,7 +92,8 @@
                 }
             ],
             "description": "Adds a new city-tour for a user.",
-            "response_success":"Returns the city tour object that has been inserted in the database."
+            "response_success":"Returns the city tour object that has been inserted in the database.",
+            "authentication": true
         },
         {
             "name": "Update a city tour",
@@ -109,8 +111,9 @@
                     "required": true
                 }
             ],
-            "description": "Updates an existing city tour to the database.",
-            "response_success":"Returns the city-tour object that has been inserted in the database."
+            "description": "Updates an existing city tour to the database.<br/>Can only update a city tour that belongs to the authenticated user.",
+            "response_success":"Returns the city-tour object that has been inserted in the database.",
+            "authentication": true
         },
         {
             "name": "List a user's city tours",
@@ -118,7 +121,8 @@
             "method": "GET",
             "body": null,
             "description": "Gets all the city tours owned by a user.",
-            "response_success":"Returns an array of the ids of the city tours owned by a user."
+            "response_success":"Returns an array of the ids of the city tours owned by a user.",
+            "authentication": true
         },
         {
             "name": "Delete a city tour by its id",
@@ -126,7 +130,8 @@
             "method": "DELETE",
             "body": null,
             "description": "Deletes a city tour, given its id.",
-            "response_success":"Returns an empty body."
+            "response_success":"Returns an empty body.",
+            "authentication": true
         }
     ]
 ]
