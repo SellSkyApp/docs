@@ -10,8 +10,8 @@
             "method": "POST",
             "body": [
                 {
-                    "name": "emailAddress",
-                    "description": "User's email address.",
+                    "name": "pseudonym",
+                    "description": "User's pseudonym",
                     "required": true
                 },
                 {
