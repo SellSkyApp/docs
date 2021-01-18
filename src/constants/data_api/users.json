@@ -120,7 +120,7 @@
             "body": null,
             "description": "Deletes a user. Deletes all city-tours which belong to this user.",
             "response_success": "Returns an empty body.",
-            "authentication": true
+            "authentication": "admin"
         },
         {
             "name": "Get a user",

@@ -11,9 +11,15 @@
             },
             {
                 "name":"userId",
-                "description":"Owner of the city tour.<br/>If the value is null, then the city-tour is a tour made by Sellsky. It can be seen by everybody, but modified only by an admin account.",
+                "description":"Owner of the city tour.<br/>If the city-tour is public, this field is not required.",
                 "type":"String",
                 "example":"<span class='todo'>TODO</span>"
+            },
+            {
+                "name":"visibility",
+                "description":"City-tour's visibility. Accepted values are <i>private</i> or <i>public</i>.",
+                "type":"String",
+                "example":"Public"
             },
             {
                 "name":"type",
@@ -56,12 +62,6 @@
                 "description":"Estimated distance of the whole city tour, in meters.",
                 "type":"Number",
                 "example":"1453"
-            },
-            {
-                "name":"?",
-                "description":"?",
-                "type":"?",
-                "example":"?"
             }
         ]
     ],
@@ -81,8 +81,8 @@
             "method": "POST",
             "body": [
                 {
-                    "name":"userId",
-                    "description": "Owner of the city tour.",
+                    "name":"visibility",
+                    "description": "Visibility of the city tour.",
                     "required": true
                 },
                 {
@@ -103,12 +103,12 @@
                 {
                     "name":"activities",
                     "description": "Array of the different activities to be visited, ordered by visit order.",
-                    "required": true
+                    "required": false
                 },
                 {
-                    "name":"",
-                    "description": "",
-                    "required": true
+                    "name":"visibility",
+                    "description": "City-tour's visibility.",
+                    "required": false
                 }
             ],
             "description": "Updates an existing city tour to the database.<br/>Can only update a city tour that belongs to the authenticated user.",
