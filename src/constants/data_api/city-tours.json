@@ -117,10 +117,10 @@
         },
         {
             "name": "List a user's city tours",
-            "path": "/api/city-tour/user/<i>:userId</i>",
+            "path": "/api/city-tour/user",
             "method": "GET",
             "body": null,
-            "description": "Gets all the city tours owned by a user.",
+            "description": "Gets all the city tours owned by the authenticated user.",
             "response_success":"Returns an array of the ids of the city tours owned by a user.",
             "authentication": true
         },

@@ -23,15 +23,15 @@
             },
             {
                 "name":"admin",
-                "description":"Wether the user is admin or not. Might be updated in the future, if we need more than just 2 levels of rights. Can not be updated through the <i>Update user</i> endpoint. Hidden.",
+                "description":"Wether the user is admin or not. Might be updated in the future, if we need more than just 2 levels of rights. Can <b>not</b> be updated through the <i>Update user</i> endpoint. Hidden.",
                 "type":"Boolean",
                 "example": "true"
             },
             {
-                "name":"verificationToken",
-                "description":"Token used to authenticate users on the API calls. Unique. Can not be updated through the <i>Update user</i> endpoint, see the Authentication documentation. Hidden.",
+                "name":"token",
+                "description":"Token used to authenticate users on the API calls. Unique. Can <b>not</b> be updated through the <i>Update user</i> endpoint, see the Authentication documentation. Tokens can be generated through the Log In endpoint, and are deleted when too old (1 month) or when user Logs Out.<br/>Hidden.",
                 "type":"String",
-                "example": "<span class='todo'>?</span>"
+                "example": "[\"...eyJ1c2VySWQiOiI2...\", \"...kiOiIzYzFi...\"]"
             },
             {
                 "name":"savedCityTours",
@@ -43,12 +43,6 @@
                 "name":"savedParameters",
                 "description":"Parameters used on the app <span class='todo'>WIP</span>.",
                 "type":"<span class='todo'>WIP</span>",
-                "example": "<span class='todo'>WIP</span>"
-            },
-            {
-                "name":"cookies",
-                "description":"Saved devices where a user shall not be asked his credentials. Hidden.",
-                "type":"String [ device ] [ <span class='todo'>nameDevice, userAgent, sessionId </span>]",
                 "example": "<span class='todo'>WIP</span>"
             }
         ]
@@ -123,13 +117,22 @@
             "authentication": "admin"
         },
         {
-            "name": "Get a user",
+            "name": "Get a user by token",
+            "path": "/api/user",
+            "method": "GET",
+            "body": null,
+            "description":"Gets the authenticated user non-hidden fields.",
+            "response_success":"Returns the non-hidden fields from the user object found.",
+            "authentication": true
+        },
+        {
+            "name": "<span class='todo'>Get a user by ID</span>",
             "path": "/api/user/<i>:userId</i>",
             "method": "GET",
             "body": null,
             "description":"Gets the user non-hidden fields.",
             "response_success":"Returns the non-hidden fields from the user object found.",
-            "authentication": true
+            "authentication": "admin"
         }
     ]
 ]

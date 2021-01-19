@@ -24,6 +24,15 @@
             "response_success": "Returns the token."
         },
         {
+            "name": "Log out",
+            "path": "/api/authentication/delete-token",
+            "method": "DELETE",
+            "body": null,
+            "description": "Removes the token that has been used to authenticate from the corresponding user's tokens list.",
+            "response_success": "Returns an empty body.",
+            "authentication": true
+        },
+        {
             "name": "Get public key",
             "path": "/api/authentication/get-public-key",
             "method": "GET",
