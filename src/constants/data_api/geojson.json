@@ -1,5 +1,5 @@
 [
-    "GeoJSON",
+    "Geolocation",
     [
         "GeoJSON structure",
         [
@@ -40,6 +40,31 @@
             ],
             "description": "Converts an address in a GeoJSON object to a string.",
             "response_success": "Returns the converted string that has been created.",
+            "authentication": true
+        },
+        {
+            "name": "Find route between <i>n</i> points",
+            "path": "/api/route",
+            "method": "POST",
+            "body": [
+                {
+                    "name":"activities",
+                    "description": "Array of activities to get the optimized route from.",
+                    "required": true
+                },
+                {
+                    "name": "activities._id",
+                    "description":"ID of the activity. This is not required if the specified point is an arbitrary position (only for starting point or ending point).",
+                    "required": false
+                },
+                {
+                    "name": "activities.coordinates",
+                    "description":"Array with the longitude and latitude of the activity.",
+                    "required": true
+                }
+            ],
+            "description": "Finds the optimised route to visit all specified points.<br/>The first element is the starting point, and the last element is the ending point.<br/>",
+            "response_success": "Returns  : <br/>- an array of the IDs of the activities, ordered. The starting point and ending point, if not tied by an activity, have a <i>null</i> value instead;<br/>- the path to follow to do this circuit, polyline format.",
             "authentication": true
         }
     ]
