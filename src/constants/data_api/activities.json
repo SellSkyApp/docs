@@ -71,9 +71,9 @@
             },
             {
                 "name":"price",
-                "description":"Description of the price.",
-                "type":"String",
-                "example": "0"
+                "description":"Price value.",
+                "type":"Number",
+                "example": "15"
             },
             {
                 "name":"outdoor",
