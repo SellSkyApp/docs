@@ -1,22 +1,29 @@
 import React from "react";
+import "./styles.css";
 
 const tcha = (arg) => ({
   __html: arg,
 });
 
-export default function Body({ data }) {
-  if (data == null) {
-    return <div className="body">This request has no body.</div>;
+export default function DataStructure({data}) {
+  if (data.length === 1) {
+    return (
+      <div className="data_structure_body">
+        There is no specific data structure. Follow the different methods
+        described below.
+      </div>
+    );
   } else {
     return (
-      <div className="body">
+      <div className="data_structure_body">
         <table>
           <tr className="first_tr">
             <th className="col_name">Attribute name</th>
             <th className="col_desc">Description</th>
-            <th className="col_req">Required</th>
+            <th className="col_type">Type</th>
+            <th className="col_example">Example</th>
           </tr>
-          {data.map((line) => {
+          {data[1].map((line, index) => {
             return (
               <tr>
                 <td
@@ -28,10 +35,12 @@ export default function Body({ data }) {
                   dangerouslySetInnerHTML={tcha(line.description)}
                 ></td>
                 <td
-                  className="col_req"
-                  dangerouslySetInnerHTML={tcha(
-                    line.required ? "<b>Yes</b>" : "No"
-                  )}
+                  className="col_type"
+                  dangerouslySetInnerHTML={tcha(line.type)}
+                ></td>
+                <td
+                  className="col_example"
+                  dangerouslySetInnerHTML={tcha(line.example)}
                 ></td>
               </tr>
             );
